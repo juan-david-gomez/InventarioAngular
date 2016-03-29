@@ -1,0 +1,30 @@
+<section class="mainbar" data-ng-init="vm.toViewAlmacenes()">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+			Ver Almacenes
+    </div>
+    <div class="panel-body">
+
+      <form novalidate>
+        <formly-form model="vm.almacenes" fields="vm.formFields">
+        </formly-form>
+      </form>
+
+      <hr/>
+      <div>
+        <a class="btn btn-success" href="/almacenes/{{vm.almacenes.id}}/edit">
+          <i class="glyphicon glyphicon-edit"></i> Editar
+        </a>
+        <a class="btn btn-danger" title="Remove" ng-really-message="¿ Esta seguro ? " ng-really-click="vm.remove()" item="vm.almacenes">
+          <i class="glyphicon glyphicon-remove-circle"></i> Eliminar
+        </a>
+        <a class="btn btn-primary" href="/almacenes">
+          <i class="glyphicon glyphicon-list"></i> Lista de Almacenes
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</section>

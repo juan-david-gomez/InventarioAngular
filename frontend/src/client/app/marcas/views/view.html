@@ -1,0 +1,30 @@
+<section class="mainbar" data-ng-init="vm.toViewMarcas()">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+			Ver Marcas
+    </div>
+    <div class="panel-body">
+
+      <form novalidate>
+        <formly-form model="vm.marcas" fields="vm.formFields">
+        </formly-form>
+      </form>
+
+      <hr/>
+      <div>
+        <a class="btn btn-success" href="/marcas/{{vm.marcas.id}}/edit">
+          <i class="glyphicon glyphicon-edit"></i> Editar
+        </a>
+        <a class="btn btn-danger" title="Remove" ng-really-message="¿ Esta seguro ? " ng-really-click="vm.remove()" item="vm.marcas">
+          <i class="glyphicon glyphicon-remove-circle"></i> Eliminar
+        </a>
+        <a class="btn btn-primary" href="/marcas">
+          <i class="glyphicon glyphicon-list"></i> Lista de Marcas
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</section>

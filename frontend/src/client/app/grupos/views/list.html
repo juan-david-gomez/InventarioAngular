@@ -1,0 +1,43 @@
+<section class="mainbar">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Lista de Grupos 
+    </div>
+    <div class="panel-body">
+
+      <div class="pull-right">
+        <a type="button" class="btn btn-success" href="/grupos/create">
+          <i class="glyphicon glyphicon-open"></i> Nuevo Grupo
+        </a>
+      </div>
+
+      <table ng-table="vm.tableParams" show-filter="true" class="table table-condensed table-striped">
+          <tr ng-repeat="grupos in $data">
+              
+              <td data-title="'Id'" sortable="'id'" filter="{ 'id': 'text' }">{{grupos.id}}</td>
+              
+              <td data-title="'Descripcion'" sortable="'descripcion'" filter="{ 'descripcion': 'text' }">{{grupos.descripcion}}</td>
+              
+              <td data-title="'Estado'" sortable="'estado'"  >{{estados[grupos.estado]}}</td>
+              
+              <td>
+                 <div class="table-actions">
+                      <a class="btn btn-default" title="View" href="/grupos/{{grupos.id}}">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                      </a>
+                      <a class="btn btn-default" title="Edit" href="/grupos/{{grupos.id}}/edit">
+                        <span class="glyphicon glyphicon-edit"></span>
+                      </a>
+                      <a class="btn btn-danger" title="Remove" ng-really-message="¿ Esta seguro ? " ng-really-click="vm.remove(grupos)" item="grupos">
+                        <span class="glyphicon glyphicon-remove-circle"></span>
+                      </a>
+                  </div>
+              </td>
+          </tr>
+      </table>
+
+    </div>
+  </div>
+
+</section>
